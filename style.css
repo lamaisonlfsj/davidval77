@@ -1,0 +1,522 @@
+/* =========================================================
+   La Maison de David & Valentine
+   Feuille de style — mobile first
+   ========================================================= */
+
+/* ---------- 1. Jetons de design ---------- */
+:root {
+  /* Couleurs */
+  --ardoise:        #2F3A36;   /* texte fort, pied de page */
+  --ardoise-doux:   #55635D;   /* texte secondaire */
+  --sauge:          #8DA48C;   /* accent principal */
+  --sauge-fonce:    #6B8269;   /* accent au survol */
+  --sauge-pale:     #DDE5DA;   /* fonds, pistes */
+  --papier:         #F3F1EC;   /* fond de page */
+  --blanc:          #FFFFFF;   /* cartes */
+  --ocre:           #C2A25B;   /* réservé à la phase en cours */
+
+  /* Rayons */
+  --r-petit:  8px;
+  --r-moyen: 14px;
+  --r-grand: 22px;
+
+  /* Ombres douces */
+  --ombre-basse: 0 1px 2px rgba(47, 58, 54, .05);
+  --ombre-carte: 0 6px 20px rgba(47, 58, 54, .08);
+  --ombre-haute: 0 12px 32px rgba(47, 58, 54, .12);
+
+  /* Rythme vertical */
+  --pas: 1rem;
+}
+
+/* ---------- 2. Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;      /* navigation fluide */
+  scroll-padding-top: 96px;     /* compense l'en-tête collant */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--papier);
+  color: var(--ardoise);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: "Outfit", system-ui, sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+p { margin: 0; }
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: var(--sauge-fonce);
+  text-decoration: none;
+}
+a:hover { color: var(--ardoise); }
+
+:focus-visible {
+  outline: 2px solid var(--sauge-fonce);
+  outline-offset: 3px;
+  border-radius: var(--r-petit);
+}
+
+.conteneur {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.lien-evitement {
+  position: absolute;
+  left: -9999px;
+}
+.lien-evitement:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 50;
+  background: var(--blanc);
+  padding: .6rem 1rem;
+  border-radius: var(--r-petit);
+  box-shadow: var(--ombre-carte);
+}
+
+/* ---------- 3. En-tête ---------- */
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: rgba(243, 241, 236, .88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--sauge-pale);
+}
+
+.entete__interieur {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding-block: .9rem;
+}
+
+.entete__titre {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.entete__soustitre {
+  font-size: .8rem;
+  color: var(--ardoise-doux);
+  margin-top: .15rem;
+}
+
+.nav__liste {
+  display: flex;
+  gap: .4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__liste a {
+  display: block;
+  padding: .4rem .85rem;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--ardoise-doux);
+  background-color: transparent;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.nav__liste a:hover {
+  background-color: var(--sauge-pale);
+  color: var(--ardoise);
+}
+
+/* ---------- 4. Sections génériques ---------- */
+.section { padding-block: 3.5rem; }
+
+.section__titre {
+  font-size: 1.6rem;
+  margin-bottom: .35rem;
+}
+
+.section__intro {
+  color: var(--ardoise-doux);
+  margin-bottom: 2rem;
+  max-width: 46ch;
+}
+
+/* ---------- 5. Avancement ---------- */
+.avancement {
+  padding-top: 2.5rem;
+}
+
+.jauge {
+  background-color: var(--blanc);
+  border-radius: var(--r-grand);
+  padding: 1.5rem 1.35rem;
+  box-shadow: var(--ombre-carte);
+}
+
+.jauge__entete {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.jauge__phase {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  max-width: 20ch;
+}
+
+.jauge__chiffre {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: var(--ardoise-doux);
+  white-space: nowrap;
+}
+.jauge__chiffre span {
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: var(--ardoise);
+}
+
+.jauge__piste {
+  height: 12px;
+  border-radius: 999px;
+  background-color: var(--sauge-pale);
+  overflow: hidden;
+}
+
+.jauge__remplissage {
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--sauge);
+}
+
+.jauge__legende {
+  margin-top: .85rem;
+  font-size: .82rem;
+  color: var(--ardoise-doux);
+}
+
+/* Frise des phases */
+.frise {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .5rem;
+}
+
+.frise__etape {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  grid-template-areas:
+    "rang nom"
+    "rang etat";
+  align-items: center;
+  column-gap: .85rem;
+  padding: .7rem .9rem;
+  background-color: var(--blanc);
+  border-radius: var(--r-moyen);
+  box-shadow: var(--ombre-basse);
+  opacity: .72;
+}
+
+.frise__rang {
+  grid-area: rang;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--sauge-pale);
+  font-size: .8rem;
+  color: var(--ardoise-doux);
+}
+
+.frise__nom {
+  grid-area: nom;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+}
+
+.frise__etat {
+  grid-area: etat;
+  font-size: .78rem;
+  color: var(--ardoise-doux);
+}
+
+.frise__etape--faite { opacity: 1; }
+.frise__etape--faite .frise__rang {
+  background-color: var(--sauge);
+  border-color: var(--sauge);
+  color: var(--blanc);
+}
+
+.frise__etape--encours {
+  opacity: 1;
+  box-shadow: var(--ombre-carte);
+  border-left: 3px solid var(--ocre);
+}
+.frise__etape--encours .frise__rang {
+  background-color: var(--ocre);
+  border-color: var(--ocre);
+  color: var(--blanc);
+}
+.frise__etape--encours .frise__nom { font-weight: 500; }
+
+/* ---------- 6. Journal ---------- */
+.grille-cartes {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.carte {
+  background-color: var(--blanc);
+  border-radius: var(--r-grand);
+  overflow: hidden;
+  box-shadow: var(--ombre-carte);
+  display: flex;
+  flex-direction: column;
+}
+
+.carte__image {
+  aspect-ratio: 16 / 10;
+  background-color: var(--sauge-pale);
+  background-size: cover;
+  background-position: center;
+}
+
+.carte__corps {
+  padding: 1.15rem 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  flex: 1;
+}
+
+.carte__date {
+  font-size: .78rem;
+  color: var(--sauge-fonce);
+}
+
+.carte__titre { font-size: 1.15rem; }
+
+.carte__resume {
+  color: var(--ardoise-doux);
+  font-size: .93rem;
+}
+
+.carte__lien {
+  margin-top: auto;
+  padding-top: .6rem;
+  font-size: .88rem;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  align-self: flex-start;
+}
+.carte__lien:hover { border-bottom-color: var(--sauge); }
+
+/* ---------- 7. Galerie ---------- */
+.grille-galerie {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .6rem;
+}
+
+.vignette {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--r-moyen);
+  background-color: var(--sauge-pale);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: var(--ombre-basse);
+}
+
+.vignette figcaption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 1.4rem .7rem .55rem;
+  font-size: .75rem;
+  color: var(--blanc);
+  background: linear-gradient(to top, rgba(47, 58, 54, .78), transparent);
+}
+
+/* La première vignette occupe deux colonnes : elle sert de mise en avant */
+.vignette:first-child {
+  grid-column: span 2;
+  aspect-ratio: 16 / 9;
+}
+
+.galerie__suite {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.bouton {
+  display: inline-block;
+  padding: .7rem 1.5rem;
+  border-radius: 999px;
+  background-color: var(--sauge);
+  color: var(--blanc);
+  font-size: .92rem;
+  font-weight: 500;
+  box-shadow: var(--ombre-basse);
+  transition: background-color .2s ease;
+}
+.bouton:hover {
+  background-color: var(--sauge-fonce);
+  color: var(--blanc);
+}
+
+/* ---------- 8. Pied de page ---------- */
+/* ============ PIED DE PAGE ============ */
+.pied {
+  background-color: #f8f9fa; /* Adaptez selon votre couleur de fond */
+  padding: 3rem 1rem;
+  text-align: center; /* Centre le texte par défaut */
+}
+
+.pied__interieur {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre verticalement et horizontalement les blocs enfants */
+  justify-content: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pied__colonne {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre les éléments à l'intérieur de chaque colonne */
+  text-align: center;
+}
+
+.pied__liens {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centre les liens de navigation sur une ligne */
+  gap: 1.5rem;
+}
+
+.pied__signature {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.pied__mot {
+  max-width: 500px;
+  margin: 0 auto;
+  color: #6c757d;
+}
+
+.pied__mentions {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #8c959f;
+}
+
+/* ---------- 9. Tablette ---------- */
+@media (min-width: 640px) {
+  .entete__interieur {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.1rem;
+  }
+
+  .entete__titre { font-size: 1.4rem; }
+
+  .section { padding-block: 4.5rem; }
+
+  .section__titre { font-size: 2rem; }
+
+  .jauge { padding: 2rem 2rem 1.8rem; }
+  .jauge__phase { font-size: 1.6rem; }
+  .jauge__chiffre span { font-size: 3.4rem; }
+
+  .frise {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grille-cartes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grille-galerie {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .vignette:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+}
+
+/* ---------- 10. Ordinateur ---------- */
+@media (min-width: 960px) {
+  .frise {
+    grid-template-columns: repeat(7, 1fr);
+    gap: .4rem;
+  }
+
+  .frise__etape {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "rang"
+      "nom"
+      "etat";
+    align-items: start;
+    row-gap: .4rem;
+    padding: 1rem .85rem 1.1rem;
+  }
+
+  .frise__etape--encours {
+    border-left: none;
+    border-top: 3px solid var(--ocre);
+  }
+
+  .grille-cartes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pied__interieur { padding-block: 3.5rem 2.5rem; }
+}
+
+/* ---------- 11. Confort de lecture ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: .01ms !important; }
+}

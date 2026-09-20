@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Maison de David &amp; Valentine — Journal de chantier</title>
+  <meta name="description" content="Suivi de la construction de la maison de David &amp; Valentine : avancement, journal de chantier et photos au jour le jour.">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Feuille de style -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Lien d'accès rapide (Accessibilité) -->
+  <a class="lien-evitement" href="#contenu-principal">Aller au contenu principal</a>
+
+  <!-- ============ EN-TÊTE ============ -->
+  <header class="entete">
+    <div class="conteneur entete__interieur">
+      <a href="#" class="entete__identite">
+        <span class="entete__badge">Journal de bord</span>
+        <h1 class="entete__titre">La Maison de David &amp; Valentine</h1>
+        <p class="entete__soustitre">Chantier ouvert le 6 novembre 2025</p>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Ouvrir le menu">
+          <svg class="nav__icone-menu" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <ul class="nav__liste" id="menu-principal">
+          <li><a href="#avancement" class="nav__lien">Avancement</a></li>
+          <li><a href="#journal" class="nav__lien">Journal</a></li>
+          <li><a href="#galerie" class="nav__lien">Photos</a></li>
+          <li><a href="mailto:bonjour@exemple.fr" class="nav__lien nav__lien--contact">Nous écrire</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu-principal">
+
+    <!-- ============ AVANCEMENT ============ -->
+    <section class="section avancement" id="avancement">
+      <div class="conteneur">
+
+        <!-- Carte de jauge globale -->
+        <div class="jauge">
+          <div class="jauge__entete">
+            <div>
+              <span class="jauge__label">Étape actuelle</span>
+              <p class="jauge__phase">Élévation des murs de structure</p>
+            </div>
+            <p class="jauge__chiffre"><span>35</span>%</p>
+          </div>
+
+          <div class="jauge__piste">
+            <progress class="jauge__barre-native" value="35" max="100" aria-label="Avancement général du chantier : 35 %"></progress>
+            <div class="jauge__remplissage" style="width: 35%;"></div>
+          </div>
+
+          <div class="jauge__pied">
+            <span>📅 Livraison estimée : <strong>Décembre 2026</strong></span>
+            <span>🔄 Dernier point : <strong>18 septembre 2026</strong></span>
+          </div>
+        </div>
+
+        <!-- Chiffres clés du projet -->
+        <div class="statistiques">
+          <div class="statistique">
+            <span class="statistique__nombre">316</span>
+            <span class="statistique__libelle">Jours de chantier</span>
+          </div>
+          <div class="statistique">
+            <span class="statistique__nombre">4/7</span>
+            <span class="statistique__libelle">Phases franchies</span>
+          </div>
+          <div class="statistique">
+            <span class="statistique__nombre">48</span>
+            <span class="statistique__libelle">Photos publiées</span>
+          </div>
+        </div>
+
+        <!-- Frise des phases -->
+        <h3 class="soustitre-section">Chronologie des travaux</h3>
+        <ol class="frise">
+          <li class="frise__etape frise__etape--faite">
+            <span class="frise__rang" aria-hidden="true">✓</span>
+            <div class="frise__contenu">
+              <span class="frise__nom">Terrassement</span>
+              <span class="frise__etat">Terminé en mars 2026</span>
+            </div>
+          </li>
+          <li class="frise__etape frise__etape--faite">
+            <span class="frise__rang" aria-hidden="true">✓</span>
+            <div class="frise__contenu">
+              <span class="frise__nom">Fondations</span>
+              <span class="frise__etat">Terminé en mai 2026</span>
+            </div>
+          </li>
+          <li class="frise__etape frise__etape--faite">
+            <span class="frise__rang" aria-hidden="true">✓</span>
+            <div class="frise__contenu">
+              <span class="frise__nom">Coulage de la Dalle</span>
+              <span class="frise__etat">Terminé en juillet 2026</span>
+            </div>
+          </li>
+          <li class="frise__etape frise__etape--encours" aria-current="step">
+            <span class="frise__rang">4</span>
+            <div class="frise__contenu">
+              <span class="frise__nom">Élévation des murs</span>
+              <span class="frise__etat">En cours — 2/4 pignons</span>
+            </div>
+          </li>
+          <li class="frise__etape">
+            <span class="frise__rang">5</span>
+            <div class="frise__contenu">
+              <span class="frise__nom">Charpente &amp; Toiture</span>
+              <span class="frise__etat">Prévu en novembre</span>
+            </div>
+          </li>
+          <li class="frise__etape">
+            <span class="frise__rang">6</span>
+            <div class="frise__contenu">
+              <span class="frise__nom">Second œuvre</span>
+              <span class="frise__etat">Hiver 2026</span>
+            </div>
+          </li>
+          <li class="frise__etape">
+            <span class="frise__rang">7</span>
+            <div class="frise__contenu">
+              <span class="frise__nom">Finitions &amp; Aménagement</span>
+              <span class="frise__etat">Printemps 2027</span>
+            </div>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- ============ JOURNAL ============ -->
+    <section class="section journal" id="journal">
+      <div class="conteneur">
+        <div class="section__en-tete">
+          <h2 class="section__titre">Le journal du chantier</h2>
+          <p class="section__intro">Les étapes marquant l'avancée de la construction au fil des mois.</p>
+        </div>
+
+        <div class="grille-cartes">
+
+          <article class="carte">
+            <div class="carte__media">
+              <img src="photos/mur-nord.jpg" alt="Pignon nord de la maison presque achevé avec ouverture pour baie vitrée" loading="lazy" decoding="async" class="carte__img">
+            </div>
+            <div class="carte__corps">
+              <p class="carte__date"><time datetime="2026-09-18">18 septembre 2026</time></p>
+              <h3 class="carte__titre">Le mur nord est monté</h3>
+              <p class="carte__resume">Trois jours de beau temps et le pignon nord atteint sa hauteur finale. On distingue enfin l'emplacement de la grande baie du salon.</p>
+            </div>
+          </article>
+
+          <article class="carte">
+            <div class="carte__media">
+              <img src="photos/livraison-parpaings.jpg" alt="Camion livrant des palettes de parpaings sur le terrain" loading="lazy" decoding="async" class="carte__img">
+            </div>
+            <div class="carte__corps">
+              <p class="carte__date"><time datetime="2026-09-09">9 septembre 2026</time></p>
+              <h3 class="carte__titre">Livraison des blocs et du ferraillage</h3>
+              <p class="carte__resume">Deux camions, une grue et un voisin très patient. Tout est stocké côté est, sous bâche, en attendant la reprise des maçons.</p>
+            </div>
+          </article>
+
+          <article class="carte">
+            <div class="carte__media">
+              <img src="photos/dalle-seche.jpg" alt="Dalle en béton totalement sèche vue d'ensemble" loading="lazy" decoding="async" class="carte__img">
+            </div>
+            <div class="carte__corps">
+              <p class="carte__date"><time datetime="2026-07-24">24 juillet 2026</time></p>
+              <h3 class="carte__titre">La dalle a fini de sécher</h3>
+              <p class="carte__resume">Quatre semaines d'attente pour 18 cm de béton. Premier vrai repère : on peut marcher dans les pièces et mesurer la cuisine au mètre ruban.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERIE ============ -->
+    <section class="section galerie" id="galerie">
+      <div class="conteneur">
+        <div class="section__en-tete">
+          <h2 class="section__titre">Galerie photos</h2>
+          <p class="section__intro">Quelques instantanés capturés sur le terrain.</p>
+        </div>
+
+        <div class="grille-galerie">
+          <figure class="vignette">
+            <img src="photos/galerie-01.jpg" alt="Le pignon nord" loading="lazy" decoding="async" class="vignette__img">
+            <figcaption class="vignette__caption">Le pignon nord, septembre</figcaption>
+          </figure>
+          <figure class="vignette">
+            <img src="photos/galerie-02.jpg" alt="Passage des gaines électriques" loading="lazy" decoding="async" class="vignette__img">
+            <figcaption class="vignette__caption">Réservations électriques</figcaption>
+          </figure>
+          <figure class="vignette">
+            <img src="photos/galerie-03.jpg" alt="Vue sur la dalle en béton au soleil couchant" loading="lazy" decoding="async" class="vignette__img">
+            <figcaption class="vignette__caption">La dalle au petit matin</figcaption>
+          </figure>
+          <figure class="vignette">
+            <img src="photos/galerie-04.jpg" alt="Toupie à béton coulant les fondations" loading="lazy" decoding="async" class="vignette__img">
+            <figcaption class="vignette__caption">Coulage des fondations</figcaption>
+          </figure>
+          <figure class="vignette">
+            <img src="photos/galerie-05.jpg" alt="Terrain vierge avant le début du chantier" loading="lazy" decoding="async" class="vignette__img">
+            <figcaption class="vignette__caption">Le terrain avant travaux</figcaption>
+          </figure>
+          <figure class="vignette">
+            <img src="photos/galerie-06.jpg" alt="Fils et piquets de marquage du terrain" loading="lazy" decoding="async" class="vignette__img">
+            <figcaption class="vignette__caption">Implantation au cordeau</figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="pied">
+    <div class="conteneur pied__interieur">
+      <div class="pied__colonne">
+        <p class="pied__signature">La Maison de David &amp; Valentine</p>
+        <p class="pied__mot">Un carnet de chantier tenu à deux, pour se souvenir de l'ordre dans lequel tout s'est construit.</p>
+      </div>
+
+      <div class="pied__colonne">
+        <p class="pied__titre-col">Navigation</p>
+        <ul class="pied__liens">
+          <li><a href="#avancement">Avancement</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#galerie">Photos</a></li>
+        </ul>
+      </div>
+
+      <div class="pied__colonne">
+        <p class="pied__titre-col">Contact</p>
+        <a href="mailto:jeconstruismamaison77@gmail.com" class="pied__email">jeconstruismamaison77@gmail.com</a>
+        <p class="pied__mentions">© 2026 · Site personnel non commercial</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script d'interactivité -->
+  <script src="script.js"></script>
+</body>
+</html>
